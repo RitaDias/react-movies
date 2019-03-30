@@ -27,20 +27,24 @@ class Movies extends Component {
                 {
                     this.props.movies.map((movie => 
                         
-                        <Flipper key={movie.id} flipKey={this.state.fullScreen}>
+                        <Flipper key={movie.id} flipKey={this.state.fullScreen}
+                            className={(this.state.fullScreen && this.state.currentMovie === movie.id) ? "full-screen-square" : ""}>
                             <Flipped flipId="square">
-                            <div className={((this.state.fullScreen && this.state.currentMovie === movie.id) ? "full-screen-square" : "")}>
-                            
+                                <div>
                                 <img 
                                     key={movie.id}
                                     src={"https://image.tmdb.org/t/p/w500/" + movie.poster_path} 
-                                    className="movie-poster"
                                     onClick={() => this.toggleFullScreen(movie.id)}
+                                    className="movie-poster"
                                     ></img> 
-                            </div>
+                                    
+                                {this.state.fullScreen && this.state.currentMovie === movie.id ?
+                                    
+                                        movie.title
+                                    : null }
+                                </div>
                             </Flipped>
                         </Flipper>
-                    
                     ))
                 }
             </div>
