@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Flipper, Flipped } from 'react-flip-toolkit';
-import '../Movies.css';
+import Movie from './Movie';
+import PreviewMovie from './PreviewMovie';
+import '../CSS/Movies.css';
 
 class Movies extends Component {
     constructor(props) {
@@ -22,27 +24,17 @@ class Movies extends Component {
       };
 
     render() {
+
         return (
             <div className={"gallery " + (this.state.fullScreen ? "prevent-scroll" : "")}>
                 {
                     this.props.movies.map((movie => 
-                        
                         <Flipper key={movie.id} flipKey={this.state.fullScreen}
-                            className={(this.state.fullScreen && this.state.currentMovie === movie.id) ? "full-screen-square" : ""}>
+                            className={this.state.fullScreen && this.state.currentMovie === movie.id ? "movie-preview" : ""}>
                             <Flipped flipId="square">
-                                <div>
-                                <img 
-                                    key={movie.id}
-                                    src={"https://image.tmdb.org/t/p/w500/" + movie.poster_path} 
-                                    onClick={() => this.toggleFullScreen(movie.id)}
-                                    className="movie-poster"
-                                    ></img> 
-                                    
-                                {this.state.fullScreen && this.state.currentMovie === movie.id ?
-                                    
-                                        movie.title
-                                    : null }
-                                </div>
+                            <div onClick={() => this.toggleFullScreen(movie.id)}>
+                                {this.state.fullScreen && this.state.currentMovie === movie.id ? <PreviewMovie movie={movie} /> : <Movie movie={movie} />}
+                            </div>
                             </Flipped>
                         </Flipper>
                     ))
