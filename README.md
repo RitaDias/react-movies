@@ -2,3 +2,4 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 Uses the following packages:
   - [react-spinners](https://www.npmjs.com/package/react-spinners)
   - [themoviedb](https://developers.themoviedb.org/)
+  - [react-flip-toolkit](https://github.com/aholachek/react-flip-toolkit)
