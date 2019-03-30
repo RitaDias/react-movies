@@ -5,6 +5,7 @@
   "dependencies": {
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
+    "react-flip-toolkit": "^6.5.7",
     "react-scripts": "2.1.8",
     "react-spinners": "^0.5.3",
     "react-test-renderer": "^16.8.6"
