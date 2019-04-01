@@ -3,6 +3,12 @@ import '../CSS/PreviewMovie.css';
 
 class PreviewMovie extends Component {
 
+    componentDidMount() {
+        document.querySelector('.movie-preview-content h1').classList.add("animate")
+        document.querySelector('.movie-preview-content .description').classList.add("animate-description")
+
+    }
+
     render() {
         return (
             <div className="movie-preview-content">
@@ -10,12 +16,14 @@ class PreviewMovie extends Component {
                 src={"https://image.tmdb.org/t/p/w500/" + (this.props.movie.poster_path)} 
                 className="movie-poster"
                 ></img> 
-                
+
                 <h1>
                     {this.props.movie.title}
                 </h1>
-                <p>
-                {this.props.movie.overview}       </p>         
+                
+                <div className="description">
+                    {this.props.movie.overview}
+                </div>     
             </div> 
         )
     }

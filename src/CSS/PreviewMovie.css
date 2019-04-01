@@ -9,7 +9,32 @@
     cursor: pointer;
     z-index: 99; 
     transition: background 300ms;
+    transition-delay: 50ms;
     color: white;
+    will-change:transform;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: 100%;
+}
+
+/* width */
+.movie-preview::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+.movie-preview::-webkit-scrollbar-track {
+  background: transparent;
+}
+ 
+/* Handle */
+.movie-preview::-webkit-scrollbar-thumb {
+  background: transparent; 
+}
+
+/* Handle on hover */
+.movie-preview::-webkit-scrollbar-thumb:hover {
+  background: transparent; 
 }
 
 .movie-preview .movie-poster {
@@ -22,7 +47,26 @@
 }
 
 h1 {
-    text-transform: uppercase;
-    letter-spacing: 2px;
     text-align: center;
+    opacity: 0;
+    transform: translateY(-10px);
+}
+
+.description {    
+    transform: translateY(-10px);
+    opacity: 0;
+}
+
+.animate {
+    opacity: 1;
+    transform: translateY(0px);
+    transition: all 300ms linear;
+    transition-delay: 300ms;
+}
+
+.animate-description {
+    opacity: 1;
+    transform: translateY(0px);
+    transition: all 300ms linear;
+    transition-delay: 600ms;
 }
