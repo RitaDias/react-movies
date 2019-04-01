@@ -1,22 +1,3 @@
- 
-.movie-preview {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 375px;
-    background-color: black;
-    cursor: pointer;
-    z-index: 99; 
-    transition: background 300ms;
-    transition-delay: 50ms;
-    color: white;
-    will-change:transform;
-    overflow-y: scroll;
-    overflow-x: hidden;
-    height: 100%;
-}
-
 .movie-preview::-webkit-scrollbar {
   width: 10px;
 }
@@ -24,45 +5,64 @@
 .movie-preview::-webkit-scrollbar-track {
   background: transparent;
 }
- 
+
 .movie-preview::-webkit-scrollbar-thumb {
-  background: transparent; 
+  background: transparent;
 }
 
 .movie-preview::-webkit-scrollbar-thumb:hover {
-  background: transparent; 
+  background: transparent;
+}
+
+.movie-preview {
+  background-color: #000000;
+  color: #ffffff;
+  cursor: pointer;
+  height: 100%;
+  left: 0;
+  position: fixed;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  top: 0;
+  transition: background 300ms ease;
+    transition-delay: 50ms;
+  width: 375px;
+  z-index: 99;
+
+  scrollbar-width: none;
+  /* for Firefox 64+ */
 }
 
 .movie-preview .movie-poster {
-    margin: 0;
+  margin: 0;
 }
 
 .movie-preview-content {
-    margin: 10px;
-    text-align: justify;
+  margin: 10px;
+  text-align: justify;
 }
 
 h1 {
-    text-align: center;
-    opacity: 0;
-    transform: translateY(-10px);
+  opacity: 0;
+  transform: translateY(-10px);
+  text-align: center;
 }
 
-.description {    
-    transform: translateY(-10px);
-    opacity: 0;
+.description {
+  opacity: 0;
+  transform: translateY(-10px);
 }
 
 .animate {
-    opacity: 1;
-    transform: translateY(0px);
-    transition: all 300ms linear;
+  opacity: 1;
+  transform: translateY(0px);
+  transition: all 300ms linear;
     transition-delay: 300ms;
 }
 
 .animate-description {
-    opacity: 1;
-    transform: translateY(0px);
-    transition: all 300ms linear;
+  opacity: 1;
+  transform: translateY(0px);
+  transition: all 300ms linear;
     transition-delay: 600ms;
 }

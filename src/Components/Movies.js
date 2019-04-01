@@ -40,7 +40,7 @@ class Movies extends Component {
                     ))
                 }
             
-            <div className={"overlay " + (this.state.fullScreen ? "active" : "")} 
+            <div className={"overlay" + (this.state.fullScreen ? " active" : "")} 
                 onClick={this.toggleFullScreen}
             />
             </div>

@@ -2,11 +2,17 @@ import React, { Component } from 'react';
 import '../CSS/PreviewMovie.css';
 
 class PreviewMovie extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            animate: false
+        };
+    };
 
     componentDidMount() {
-        document.querySelector('.movie-preview-content h1').classList.add("animate")
-        document.querySelector('.movie-preview-content .description').classList.add("animate-description")
-
+        this.setState({
+            animate: true
+        });
     }
 
     render() {
@@ -17,16 +23,16 @@ class PreviewMovie extends Component {
                 className="movie-poster"
                 ></img> 
 
-                <h1>
+                <h1 className={this.state.animate ? " animate" : ""}>
                     {this.props.movie.title}
                 </h1>
                 
-                <div className="description">
+                <div className={"description" + (this.state.animate ? " animate-description" : "")}>
                     {this.props.movie.overview}
                 </div>     
             </div> 
         )
-    }
+    };
 }
 
 export default PreviewMovie;
