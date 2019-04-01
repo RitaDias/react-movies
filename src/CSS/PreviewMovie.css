@@ -17,22 +17,18 @@
     height: 100%;
 }
 
-/* width */
 .movie-preview::-webkit-scrollbar {
   width: 10px;
 }
 
-/* Track */
 .movie-preview::-webkit-scrollbar-track {
   background: transparent;
 }
  
-/* Handle */
 .movie-preview::-webkit-scrollbar-thumb {
   background: transparent; 
 }
 
-/* Handle on hover */
 .movie-preview::-webkit-scrollbar-thumb:hover {
   background: transparent; 
 }

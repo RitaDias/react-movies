@@ -39,6 +39,10 @@ class Movies extends Component {
                         </Flipper>
                     ))
                 }
+            
+            <div className={"overlay " + (this.state.fullScreen ? "active" : "")} 
+                onClick={this.toggleFullScreen}
+            />
             </div>
         )
     }
