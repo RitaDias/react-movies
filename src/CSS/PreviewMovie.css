@@ -15,7 +15,7 @@
 }
 
 .movie-preview {
-  background-color: #000000;
+  background-color: #040404;
   color: #ffffff;
   cursor: pointer;
   height: 100%;
@@ -28,6 +28,7 @@
     transition-delay: 50ms;
   width: 375px;
   z-index: 99;
+  
 
   scrollbar-width: none;
   /* for Firefox 64+ */
