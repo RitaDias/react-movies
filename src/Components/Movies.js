@@ -10,7 +10,8 @@ class Movies extends Component {
 
         this.state = {
             currentMovie: null,
-            fullScreen: false
+            fullScreen: false,
+            movies: this.props.movies ? this.props.movies : []
         }
 
         this.toggleFullScreen = this.toggleFullScreen.bind(this);
@@ -24,15 +25,15 @@ class Movies extends Component {
       };
 
     render() {
-
+        
         return (
-            <div className={"gallery " + (this.state.fullScreen ? "prevent-scroll" : "")}>
+            <div className="gallery">
                 {
-                    this.props.movies.map((movie => 
+                    this.state.movies.map((movie => 
                         <Flipper key={movie.id} flipKey={this.state.fullScreen}
                             className={this.state.fullScreen && this.state.currentMovie === movie.id ? "movie-preview" : ""}>
                             <Flipped flipId="square">
-                            <div onClick={() => this.toggleFullScreen(movie.id)}>
+                            <div className="content" onClick={() => this.toggleFullScreen(movie.id)}>
                                 {this.state.fullScreen && this.state.currentMovie === movie.id ? <PreviewMovie movie={movie} /> : <Movie movie={movie} />}
                             </div>
                             </Flipped>
