@@ -1,7 +1,8 @@
 ![](preview.gif)
 
 This is a sandbox project that was created to test out some npm packages and fetch.
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+It was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 Uses the following packages:
   - [react-spinners](https://www.npmjs.com/package/react-spinners)
   - [themoviedb](https://developers.themoviedb.org/)
